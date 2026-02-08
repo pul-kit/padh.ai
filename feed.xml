@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pulkit Goyal - Thoughts</title>
+    <link>https://padh.ai/Thoughts</link>
+    <description>Questions, frameworks, and notes in progress from Pulkit Goyal.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Feb 2026 06:22:33 +0000</lastBuildDate>
+    <atom:link href="https://padh.ai/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stop Making Me Update the Tool</title>
+      <link>https://padh.ai/Thoughts/Technology/Stop%20Making%20Me%20Update%20the%20Tool</link>
+      <guid isPermaLink="true">https://padh.ai/Thoughts/Technology/Stop%20Making%20Me%20Update%20the%20Tool</guid>
+      <pubDate>Sat, 24 Jan 2026 00:00:00 +0000</pubDate>
+      <description>We&apos;ve normalized spending 5-10% of our time documenting progress in systems that don&apos;t help us do the actual work. Project management should not interrupt the work.</description>
+      <category>Technology</category>
+    </item>
+    <item>
+      <title>When Learning Feels Like Learning, Something&apos;s Wrong</title>
+      <link>https://padh.ai/Thoughts/Education/When%20Learning%20Feels%20Like%20Learning%2C%20Something%27s%20Wrong</link>
+      <guid isPermaLink="true">https://padh.ai/Thoughts/Education/When%20Learning%20Feels%20Like%20Learning%2C%20Something%27s%20Wrong</guid>
+      <pubDate>Mon, 19 Jan 2026 12:21:00 +0000</pubDate>
+      <description>Schools teach before students care, but learning without need is just forgetting with extra steps.</description>
+      <category>Education</category>
+    </item>
+    <item>
+      <title>Why Your Phone Has Multiple Cameras (And Why They&apos;re Arranged That Way)</title>
+      <link>https://padh.ai/Thoughts/Technology/Why%20Your%20Phone%20Has%20Multiple%20Cameras%20%28And%20Why%20They%27re%20Arranged%20That%20Way%29</link>
+      <guid isPermaLink="true">https://padh.ai/Thoughts/Technology/Why%20Your%20Phone%20Has%20Multiple%20Cameras%20%28And%20Why%20They%27re%20Arranged%20That%20Way%29</guid>
+      <pubDate>Sun, 18 Jan 2026 00:00:00 +0000</pubDate>
+      <description>The camera bump on your phone isn&apos;t arbitrary. The placement and arrangement of the cameras reveal which trade-offs the manufacturer decided were worth it.</description>
+      <category>Technology</category>
+    </item>
+    <item>
+      <title>You Won&apos;t Own a Car and You&apos;ll Be Happy</title>
+      <link>https://padh.ai/Thoughts/Technology/You%20Won%27t%20Own%20a%20Car%20and%20You%27ll%20Be%20Happy</link>
+      <guid isPermaLink="true">https://padh.ai/Thoughts/Technology/You%20Won%27t%20Own%20a%20Car%20and%20You%27ll%20Be%20Happy</guid>
+      <pubDate>Sun, 18 Jan 2026 00:00:00 +0000</pubDate>
+      <description>Self-driving cars will make owning a car financially senseless. But being happy without owning one requires giving up more than just the economics.</description>
+      <category>Technology</category>
+    </item>
+    <item>
+      <title>Are You Designing for Flexibility or Learner Interaction?</title>
+      <link>https://padh.ai/Thoughts/Education/Are%20You%20Designing%20for%20Flexibility%20or%20Learner%20Interaction%3F</link>
+      <guid isPermaLink="true">https://padh.ai/Thoughts/Education/Are%20You%20Designing%20for%20Flexibility%20or%20Learner%20Interaction%3F</guid>
+      <pubDate>Wed, 14 Jan 2026 12:21:00 +0000</pubDate>
+      <description>As online learning becomes more flexible, the chances for learners to feel genuinely connected to one another quietly diminish.</description>
+      <category>Education</category>
+    </item>
+  </channel>
+</rss>
