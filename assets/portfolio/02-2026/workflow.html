@@ -7,7 +7,7 @@
 <title>Flipcard Process Animation (Click Toggle)</title>
 <style>
   :root { --w: 960px; }
-  body { margin: 0; display: grid; place-items: center; background: transparent; }
+  body { margin: 0; display: grid; place-items: center; background: var(--page-bg, transparent); }
   .wrap { width: min(var(--w), 100%); cursor: pointer; user-select: none; }
   svg { width: 100%; height: auto; display: block; }
 
@@ -134,6 +134,62 @@
 <script>
 (() => {
   const wrap = document.getElementById("wrap");
+  // Theme-aware background (Obsidian Publish light/dark)
+  function applyResponsiveBackground() {
+    let bg = null;
+
+    // 1) Try to follow Obsidian's theme class in the parent document (works when same-origin)
+    try {
+      const pb = window.parent && window.parent.document && window.parent.document.body;
+      if (pb && pb.classList) {
+        const cls = pb.classList;
+        const isDark =
+          cls.contains("theme-dark") ||
+          cls.contains("mod-dark") ||
+          cls.contains("is-dark") ||
+          cls.contains("dark") ||
+          cls.contains("obsidian-dark");
+
+        const isLight =
+          cls.contains("theme-light") ||
+          cls.contains("mod-light") ||
+          cls.contains("is-light") ||
+          cls.contains("light") ||
+          cls.contains("obsidian-light");
+
+        if (isDark) bg = "#000";
+        else if (isLight) bg = "#fff";
+      }
+    } catch (e) {
+      // ignore cross-origin access
+    }
+
+    // 2) Fallback: system theme
+    if (!bg) {
+      bg = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "#000" : "#fff";
+    }
+
+    document.documentElement.style.setProperty("--page-bg", bg);
+  }
+
+  applyResponsiveBackground();
+
+  // Watch for changes (Obsidian can toggle theme without reload)
+  try {
+    const pb = window.parent && window.parent.document && window.parent.document.body;
+    if (pb) {
+      const mo = new MutationObserver(() => applyResponsiveBackground());
+      mo.observe(pb, { attributes: true, attributeFilter: ["class"] });
+    }
+  } catch (e) {}
+
+  if (window.matchMedia) {
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    // Safari uses addListener
+    if (mq.addEventListener) mq.addEventListener("change", applyResponsiveBackground);
+    else if (mq.addListener) mq.addListener(applyResponsiveBackground);
+  }
+
   const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const el = (id) => document.getElementById(id);
@@ -270,9 +326,8 @@
     );
   }
 
-  // Init (load in the BEFORE state, then play forward once)
+  // Init (load in the BEFORE state; animation runs on click)
   setBaseBefore();
-  playForward();
 
   // Toggle: reverse on every click (and forward again on the next click)
   wrap.addEventListener("click", () => {
